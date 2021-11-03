@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta class="utf-8">
+    <link rel="stylesheet" href="img/style.css">
+    <title>ルーレット</title>
+    <script type="text/javascript">
+      var ImageSet = 1 ;
+      ANIMA = new Array() 
+      // ↓画像数
+      ANIMA[1] = new Image() ;
+      ANIMA[2] = new Image() ;
+      ANIMA[3] = new Image() ;
+      ANIMA[4] = new Image() ;
+      // ↓画像名
+      ANIMA[1].src = "img/arupaka.jpg" ;
+      ANIMA[2].src = "img/neko.jpg" ;
+      ANIMA[3].src = "img/saru.jpg" ;
+      ANIMA[4].src = "img/yagi.jpg" ;
+      function animation_1() {
+      document.photo.src = ANIMA[ImageSet].src ;
+      ImageSet++ ;
+      if(ImageSet > 4) {
+      ImageSet = 1 ;
+      } 
+      setTimeout("animation_1()",1000);
+      }
+    </script>
+    <style type="text/css">
+      body { background-color: #d2dacf; }
+      </style>
+  </head>
+  <body onLoad="animation_1()">
+    <div class="data">
+      <img src="img/arupaka.jpg" name="photo" width="200" height="200" id="photo">
+    </div>
+    <button >
+      ボタン
+    </button>
+  </body>
+</html>
